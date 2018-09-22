@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>JQVMap - World Map</title>
+    <link href="https://garethholloway.github.io/jqvmap.css" media="screen" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://garethholloway.github.io/jquery.vmap.js"></script>
+    <script type="text/javascript" src="https://garethholloway.github.io/maps/jquery.vmap.world.js" charset="utf-8"></script>
+
+  <script>
+      var map;
+      jQuery(document).ready(function () {
+        var currentRegion = '';
+		
+		var europeList = ['gb', 'ie'];
+        
+        var enabledRegions = ['gb', 'us', 'cy', 'es', 'fr', 'it', 'nl', 'hr', 'hu', 'gr', 'sk', 'at', 'cz', 'de', 'be', 'th', 'kh', 'my', 'vn', 'sg', 'ie']; //add area code to here when new place added.
+        map = jQuery('#vmap').vectorMap({
+          map: 'world_en', //Map type
+          
+          enableZoom: true,
+          
+          showTooltip: true,
+          
+          selectedColor: '#333333',
+          
+		      color: '#C9B1D0', //COLOUR FOR ALL REMAINING COUNTRIES
+          
+		      backgroundColor: '',//BACKGROUND COLOUR
+          
+          selectedRegions: [''], //leave empty as default.
+          
+          colors: {
+            gb: '#59315F', //add area code to here when new place added. Press enter type country code and then hex colour code.
+            us: '#59315F',
+			cy: '#59315F',
+			es: '#59315F',
+			fr: '#59315F',
+			it: '#59315F',
+			nl: '#59315F',
+			hr: '#59315F',
+			hu: '#59315F',
+			sk: '#59315F',
+			at: '#59315F',
+			cz: '#59315F',
+			de: '#59315F',
+			be: '#59315F',
+			kh: '#59315F',
+			my: '#59315F',
+			vn: '#59315F',
+			sg: '#59315F',
+			gr: '#59315F',
+			ie: '#59315F',
+            },
+          
+          onRegionClick: function(event, code, region){
+            // Check if this is an Enabled Region, and not the current selected on
+            if(enabledRegions.indexOf(code) === -1 || currentRegion === code){
+              // Not an Enabled Region
+              event.preventDefault();
+            } else {
+              // Enabled Region. Update Newly Selected Region.
+              currentRegion = code;
+            }
+          },
+          
+          onRegionSelect: function(event, code, region){
+            console.log(map.selectedRegions);
+			if (currentRegion == 'gb'){
+				window.open('https://www.witworld.co.uk/europe');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
+			}
+          },
+        });
+      });
+    </script>
+
+  </head>
+  <body>
+    <div id="vmap" style="width: auto; height: 100%;"></div>
+  </body>
+</html>
