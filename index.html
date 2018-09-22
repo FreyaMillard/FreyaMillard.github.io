@@ -31,26 +31,26 @@
           selectedRegions: [''], //leave empty as default.
           
           colors: {
-            gb: '#59315F', //add area code to here when new place added. Press enter type country code and then hex colour code.
-            us: '#59315F',
-			cy: '#59315F',
-			es: '#59315F',
-			fr: '#59315F',
-			it: '#59315F',
-			nl: '#59315F',
-			hr: '#59315F',
-			hu: '#59315F',
-			sk: '#59315F',
-			at: '#59315F',
-			cz: '#59315F',
-			de: '#59315F',
-			be: '#59315F',
-			kh: '#59315F',
-			my: '#59315F',
-			vn: '#59315F',
-			sg: '#59315F',
-			gr: '#59315F',
-			ie: '#59315F',
+            		gb: '#59315F', //add area code to here when new place added. Press enter type country code and then hex colour code.
+           		us: '#59315F', //USA
+			cy: '#59315F', //Cyprus
+			es: '#59315F', //Spain
+			fr: '#59315F', //France
+			it: '#59315F', //Italy
+			nl: '#59315F', //Netherlands
+			hr: '#59315F', //Croatia
+			hu: '#59315F', //Hungary
+			sk: '#59315F', //Slovakia
+			at: '#59315F', //Austria
+			cz: '#59315F', //Czech Republic
+			de: '#59315F', //Germany
+			be: '#59315F', //Belgium
+			kh: '#59315F', //Cambodia
+			my: '#59315F', //Malaysia
+			vn: '#59315F', //Vietnam
+			sg: '#59315F', //Singapore
+			gr: '#59315F', //Greece
+			ie: '#59315F', //Ireland
             },
           
           onRegionClick: function(event, code, region){
@@ -65,9 +65,13 @@
           },
           
           onRegionSelect: function(event, code, region){
-            console.log(map.selectedRegions);
-			if (currentRegion == 'gb'){
+            console.log(map.selectedRegions); //To Add additional regions to load of click, copy and paste the
+			if (currentRegion == 'gb' || currentRegion == 'cy' || currentRegion == 'es' || currentRegion == 'fr' || currentRegion == 'it' || currentRegion == 'nl' || currentRegion == 'hr' || currentRegion == 'hu' || currentRegion == 'sk' || currentRegion == 'at' || currentRegion == 'cz' || currentRegion == 'de' || currentRegion == 'be' || currentRegion == 'gr' || currentRegion == 'ie' ){
 				window.open('https://www.witworld.co.uk/europe');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
+			}if (currentRegion == 'us' ){
+				window.open('https://www.witworld.co.uk/usa');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
+			}if (currentRegion == 'my' ){
+				window.open('https://www.witworld.co.uk/asia');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
 			}
           },
         });
