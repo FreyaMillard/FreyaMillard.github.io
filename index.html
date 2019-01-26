@@ -14,8 +14,8 @@
 		
 		var europeList = ['gb', 'ie', 'cy', 'es', 'fr', 'it', 'nl', 'hr', 'sk', 'at', 'cz', 'de', 'be', 'gr', 'ie']; //Add country code to the relevant continent.
 		var africa = [];
-		var asia = [];
-		var nAmerica = [];
+		var asia = ['kh', 'my', 'vn', 'sg'];
+		var nAmerica = ['us'];
 		var sAmerica = [];
 		var oceania = [];
 		var antartica = [];
@@ -38,26 +38,26 @@
           
           colors: {
 		  
-            gb: '#006341', //add area code to here when new place added. Press enter type country code and then hex colour code.
+           	gb: '#006341', //add area code to here when new place added. Press enter type country code and then hex colour code.
            	us: '#006341', //USA
-			cy: '#006341', //Cyprus
-			es: '#006341', //Spain
-			fr: '#006341', //France
-			it: '#006341', //Italy
-			nl: '#006341', //Netherlands
-			hr: '#006341', //Croatia
-			hu: '#006341', //Hungary
-			sk: '#006341', //Slovakia
-			at: '#006341', //Austria
-			cz: '#006341', //Czech Republic
-			de: '#006341', //Germany
-			be: '#006341', //Belgium
-			kh: '#006341', //Cambodia
-			my: '#006341', //Malaysia
-			vn: '#006341', //Vietnam
-			sg: '#006341', //Singapore
-			gr: '#006341', //Greece
-			ie: '#006341', //Ireland
+		cy: '#006341', //Cyprus
+		es: '#006341', //Spain
+		fr: '#006341', //France
+		it: '#006341', //Italy
+		nl: '#006341', //Netherlands
+		hr: '#006341', //Croatia
+		hu: '#006341', //Hungary
+		sk: '#006341', //Slovakia
+		at: '#006341', //Austria
+		cz: '#006341', //Czech Republic
+		de: '#006341', //Germany
+		be: '#006341', //Belgium
+		kh: '#006341', //Cambodia
+		my: '#006341', //Malaysia
+		vn: '#006341', //Vietnam
+		sg: '#006341', //Singapore
+		gr: '#006341', //Greece
+		ie: '#006341', //Ireland
 			
             },
           
@@ -76,11 +76,19 @@
             console.log(map.selectedRegions); //To Add additional regions to load of click, copy and paste the
 			if (europeList.includes(currentRegion)){
 				window.open('https://www.witworld.co.uk/europe');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
-			}else if (currentRegion == 'us' ){
-				window.open('https://www.witworld.co.uk/usa');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
-			}else if (currentRegion == 'my' ){
+			}else if (nAmerica.includes(currentRegion)){
+				window.open('https://www.witworld.co.uk/northamerica');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
+			}else if (africa.includes(currentRegion)){
+				window.open('https://www.witworld.co.uk/africa');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
+			}else if (asia.includes(currentRegion)){
 				window.open('https://www.witworld.co.uk/asia');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
+			}else if (sAmerica.includes(currentRegion)){
+				window.open('https://www.witworld.co.uk/southamerica');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
+			}else if (oceania.includes(currentRegion)){
+				window.open('https://www.witworld.co.uk/oceania');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
 			}
+				
+				
           },
         });
       });
