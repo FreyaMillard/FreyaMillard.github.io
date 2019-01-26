@@ -70,7 +70,7 @@
               currentRegion = code;
 	      console.log(map.selectedRegions); //To Add additional regions to load of click, copy and paste the
 	      if (europeList.includes(currentRegion)){
-				window.open('https://www.witworld.co.uk/europe');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
+				window.location.href('https://www.witworld.co.uk/europe');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
 			}else if (nAmerica.includes(currentRegion)){
 				window.open('https://www.witworld.co.uk/northamerica');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
 			}else if (africa.includes(currentRegion)){
@@ -85,24 +85,7 @@
 		    
             }
           },
-          
-          /*onRegionSelect: function(event, code, region){
-            console.log(map.selectedRegions); //To Add additional regions to load of click, copy and paste the
-			if (europeList.includes(currentRegion)){
-				window.open('https://www.witworld.co.uk/europe');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
-			}else if (nAmerica.includes(currentRegion)){
-				window.open('https://www.witworld.co.uk/northamerica');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
-			}else if (africa.includes(currentRegion)){
-				window.open('https://www.witworld.co.uk/africa');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
-			}else if (asia.includes(currentRegion)){
-				window.open('https://www.witworld.co.uk/asia');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
-			}else if (sAmerica.includes(currentRegion)){
-				window.open('https://www.witworld.co.uk/southamerica');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
-			}else if (oceania.includes(currentRegion)){
-				window.open('https://www.witworld.co.uk/oceania');// Redirects to the the appropriate continent/page i.e navigates to Europe for a country click in Europe.
-			}
-					
-          },*/	
+		
         });
       });
     </script>
